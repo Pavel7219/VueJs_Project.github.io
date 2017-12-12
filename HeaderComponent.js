@@ -1,10 +1,5 @@
 const Child1 = ({
-    props: {
-        name: {
-            type: String,
-            default: 'Nothing'
-        }
-    },
+    props:["id"],
     data:function () {
         return {
             regionsUa: regionsUa,
@@ -13,7 +8,7 @@ const Child1 = ({
     computed: {
 
         select:function () {
-            return this.name
+            return this.id
         }
     },
     methods:{
@@ -44,7 +39,7 @@ const regions = ({
     },
     data:function () {
         return {
-
+            regionsUa: regionsUa,
         }
     },
     methods:{
@@ -56,10 +51,7 @@ const regions = ({
     template:`
     <div>
      <aside class="aside">
-        <div class="menu-item"><router-link to="/Region/Child1">North</router-link></div>
-        <div class="menu-item"><router-link  to="/Region/Child2">South</router-link></div>
-        <div class="menu-item"><router-link to="/Region/Child3">West</router-link></div>
-        <div class="menu-item"><router-link to="/Region/Child4">East</router-link></div>
+        <div class="menu-item" v-for="item,items in regionsUa"><router-link  :key="items"  :id="items"  :to='{name: "child", params: { id: items } }'>{{items}}</router-link></div>
     </aside>
     <router-view></router-view>
     </div>
