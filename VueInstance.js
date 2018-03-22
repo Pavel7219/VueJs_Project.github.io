@@ -22,9 +22,10 @@ var vm = new Vue({
         
             </nav>
         </header>
+        <router-view></router-view>
           <footer>
         </footer>
-        <router-view></router-view>
+        
     </div>
 `
 })

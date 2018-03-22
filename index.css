@@ -119,8 +119,9 @@ a{
 }
 /*Slider*/
 .second{
+    /*z-index: -1;*/
     position: relative;
-    top:150px;
+    top:110px;
     display: flex;
     background-color: #5e5e5e;
     max-width: 80%;
@@ -130,9 +131,9 @@ a{
     max-width:90%;
     height: 500px;
 }
-.left-button,.right-button{
+.left-button{
     background: transparent;
-    padding: 0;
+    padding:0;
     font-size: 60px;
     color: #9f9f9f;
     cursor: pointer;
@@ -140,26 +141,44 @@ a{
     margin: 0;
     border: hidden;
     min-width: 40px;
+    position: absolute;
+    margin-top: 250px;
+    z-index: 100;
 }
+.right-button{
+     background: transparent;
+     padding:0;
+     font-size: 60px;
+     color: #9f9f9f;
+     cursor: pointer;
+     width: 50px;
+     margin: 0;
+     border: hidden;
+     min-width: 40px;
+     position: absolute;
+     margin-left: 94%;
+    margin-top: 250px;
+    z-index: 100;
+ }
 .left-button:hover,.right-button:hover{
     background-color: #373737;
 }
 .slide-left,.slide-right{
-    max-width: 100%;
+    min-width: 100%;
 
 }
 
 .slide-left-enter-active {
-    animation: mc_left 0.5s reverse forwards;
+    animation: mc_left 1s reverse forwards;
 }
 .slide-left-leave-active {
-    animation: mc_right 0.5s forwards;
+    animation: mc_right 1s forwards;
 }
 .slide-right-enter-active {
-    animation: mc_right 0.5s forwards;
+    animation: mc_right 1s forwards;
 }
 .slide-right-leave-active {
-    animation: mc_left 0.5s reverse forwards;
+    animation: mc_left 1s reverse forwards;
 }
 
 @keyframes mc_left {
